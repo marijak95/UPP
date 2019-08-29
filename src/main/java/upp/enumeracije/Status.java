@@ -1,0 +1,7 @@
+package upp.enumeracije;
+
+public enum Status {
+
+	PODNET , PRIHVACEN, ODBIJEN, KOREKCIJA_FORMAT, KOREKCIJA_VELIKA, NA_RECENZIRANJU
+	
+}

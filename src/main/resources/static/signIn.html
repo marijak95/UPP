@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+.bg {
+    /* The image used */
+    background-image: url("science-center.jpg");
+
+    /* Full height */
+    height: 100%; 
+    width:100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.button-home {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 14px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+}
+</style>
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sign in</title>
+		<script src="scripts/jquery-3.3.1.min.js"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        
+        <script src="scripts/index.js"></script>
+
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/book.png">
+
+		<script src="toastr/toastr.min.js"></script>
+    	<link href="toastr/toastr.min.css" rel="stylesheet"/>
+		
+    </head>
+
+    <body>
+		<div class="bg">
+			 <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+ 			        <div class="row">
+                    
+                    	<div class="col-lg-3"></div>
+                    
+                        <div class="col-lg-6">
+                        	
+                    
+	                        	<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Sign in!</h3>
+	                            		
+	                        		</div>
+	              
+	                            </div>
+	                            <div class="form-bottom">
+				                    
+				                    	<div id="emailDiv" class="form-group">
+				                    		 <label class="sr-only" for="form-email">Email</label>
+				                        	<input type="text" name="form-email" placeholder="Unesite email" class="form-email form-control" id="formLogin-email">
+				                        </div>
+				                        <div id="passwordDiv" class="form-group">
+				                        	 <label class="sr-only" for="form-password">Password</label>
+				                        	<input type="password" name="form-password" placeholder="Unesite password" class="form-password form-control" id="formLogin-password">
+				                        </div>
+				                        <button type="button" onclick="buttonLoginClick()" class="button-home">Sign in</button>
+				                    
+				                    
+			                    </div>
+	
+		                
+	                        
+                        </div>
+                        
+                        <div class="col-lg-3"></div>
+                        
+                        	
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+		</div>
+       
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+     
+
+    </body>
+
+</html>
