@@ -6,7 +6,7 @@ $(document).ready(function () {
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/naucnaOblast/getAll",
+		url: "http://localhost:3000/naucnaOblast/getAll",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -24,7 +24,7 @@ $(document).ready(function () {
     });
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/user/getFormFields/"+PInsId,
+		url: "http://localhost:3000/user/getFormFields/"+PInsId,
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -100,7 +100,7 @@ function submitDodavanjeRada(){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/rad/dodajRad/"+taskId,
+		url: "http://localhost:3000/rad/dodajRad/"+taskId,
         type: "POST",
         contentType: "application/json",
         data: data,

@@ -2,7 +2,7 @@ $(document).ready(function () {
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/getLoggedIn",
+		url: "http://localhost:3000/korisnik/getLoggedIn",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -17,7 +17,7 @@ $(document).ready(function () {
     });
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/casopis/getAll",
+		url: "http://localhost:3000/casopis/getAll",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -38,7 +38,7 @@ $(document).ready(function () {
     });
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/getTaskovi",
+		url: "http://localhost:3000/korisnik/getTaskovi",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -53,10 +53,18 @@ $(document).ready(function () {
         }
     });
 })
+
+function ispravljeniRadovi(){
+	top.location.href = "ispravljeniRadovi.html";
+	   
+}
+
+
+
 function task(taskId,taskName){
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/getRadDTO/"+taskId,
+		url: "http://localhost:3000/korisnik/getRadDTO/"+taskId,
         type: "GET",
         dataType:"json",
         crossDomain: true,
@@ -76,7 +84,7 @@ function task(taskId,taskName){
 	        	}
 	        	
 	        	str+="<input style=\"margin-left:15%;\" type=\"file\" style=\"height:50px;\" class=\"form-first-name form-control\" id=\"dodatiRadPutanja\"/>";
-	        	str+="<button class=\"btn btn-primary\" style=\"margin-left:15%;\" type=\"button\" onclick=\"submitIspravkaRada(\'"+taskId + "\')\" class=\"button-home\">Dodaj novi pdf</button>";
+	        	str+="<button style=\"margin-left:15%;\" type=\"button\" onclick=\"submitIspravkaRada(\'"+taskId + "\')\" class=\"button-home\">Dodaj novi pdf</button>";
 	        	
 	        	str+="<input type=\"hidden\" id=\"taskId\" name=\"taskId\" value=\""+data.taskId+"\">";
 				str+="<input type=\"hidden\" id=\"processInstanceId\" name=\"processInstanceId\" value=\""+data.processInstanceId+"\">";
@@ -96,7 +104,7 @@ function submitIspravkaRada(taskId){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/rad/ispravka/"+taskId+"/noviPdf",
+		url: "http://localhost:3000/rad/ispravka/"+taskId+"/noviPdf",
         type: "POST",
         contentType:"text/plain",
         data:putanjaNoviPdf,
@@ -113,7 +121,7 @@ function dodajRad(idCasopisa){
 		var process = "NaucnaCentrala";
 		$.ajax({
 			async: false,
-			url: "http://localhost:4242/user/startProcess/"+process,
+			url: "http://localhost:3000/user/startProcess/"+process,
 	        type: "GET",
 	        dataType:"json",
 	        crossDomain: true,
@@ -132,7 +140,7 @@ function logout(){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/logout",
+		url: "http://localhost:3000/korisnik/logout",
         type: "GET",
         dataType: "json",
         success: function (data) {

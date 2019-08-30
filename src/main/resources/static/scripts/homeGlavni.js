@@ -2,7 +2,7 @@ $(document).ready(function () {
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/getLoggedIn",
+		url: "http://localhost:3000/korisnik/getLoggedIn",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -17,7 +17,7 @@ $(document).ready(function () {
     });
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/rad/getAllByGlavniUrednik",
+		url: "http://localhost:3000/rad/getAllByGlavniUrednik",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -40,7 +40,7 @@ $(document).ready(function () {
     });
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/getTaskovi",
+		url: "http://localhost:3000/korisnik/getTaskovi",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -59,7 +59,7 @@ $(document).ready(function () {
 function task(taskId,taskName){
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/getRadDTO/"+taskId,
+		url: "http://localhost:3000/korisnik/getRadDTO/"+taskId,
         type: "GET",
         dataType:"json",
         crossDomain: true,
@@ -84,7 +84,7 @@ function task(taskId,taskName){
 	        	str+=" <button onclick=\"vecaKorekcija(\'"+taskId + "\')\" class=\"button-home\">Veca korekcija</button>";
 	        	
 	        	
-	        	str+=" <button class=\"btn btn-primary\" onclick=\"vratiNovimRecenzentima(\'"+taskId + "\')\" class=\"button-home\">Nova Recenzija</button>";
+	        	str+=" <button onclick=\"vratiNovimRecenzentima(\'"+taskId + "\')\" class=\"button-home\">Nova Recenzija</button>";
 	        	
 	        	
 	        	str+="<input type=\"hidden\" id=\"taskId\" name=\"taskId\" value=\""+data.taskId+"\">";
@@ -104,7 +104,7 @@ function prihvatiRad(taskId){
 		
 		$.ajax({
 			async: false,
-			url: "http://localhost:4242/korisnik/prihvatiRadKonacno/"+taskId,
+			url: "http://localhost:3000/korisnik/prihvatiRadKonacno/"+taskId,
 	        type: "POST",
 	        success: function () {
 	        	toastr["success"]("Rad prihvacen!");
@@ -119,7 +119,7 @@ function odbijRad(taskId){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/odbijRadKonacno/"+taskId,
+		url: "http://localhost:3000/korisnik/odbijRadKonacno/"+taskId,
         type: "POST",
         success: function () {
         	toastr["success"]("Rad odbijen!");
@@ -135,7 +135,7 @@ function vecaKorekcija(taskId){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/vecaKorekcija/"+taskId,
+		url: "http://localhost:3000/korisnik/vecaKorekcija/"+taskId,
         type: "POST",
         success: function () {
         	toastr["success"]("Rad poslat na vecu korekciju!");
@@ -152,7 +152,7 @@ function manjaKorekcija(taskId){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/manjaKorekcija/"+taskId,
+		url: "http://localhost:3000/korisnik/manjaKorekcija/"+taskId,
         type: "POST",
         success: function () {
         	toastr["success"]("Rad poslat na manju korekciju!");
@@ -168,7 +168,7 @@ function vratiNovimRecenzentima(taskId){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/noviRecenzenti/"+taskId,
+		url: "http://localhost:3000/korisnik/noviRecenzenti/"+taskId,
         type: "POST",
         success: function () {
         	toastr["success"]("Poslato na ponovno biranje recenzenata!");
@@ -184,7 +184,7 @@ function odbij(idRada,PID){
 		var process = "DodavanjeRada";
 		$.ajax({
 			async: false,
-			url: "http://localhost:4242/rad/odbijRad/"+PID+"/radId/"+idRada,
+			url: "http://localhost:3000/rad/odbijRad/"+PID+"/radId/"+idRada,
 	        type: "GET", 
 	        crossDomain: true,
 	        withCredentials: true,
@@ -202,7 +202,7 @@ function odbij(idRada,PID){
 function tematskiPrihvatljiv(idRada,PID){
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/rad/tematskiPrihvatljiv/"+PID,
+		url: "http://localhost:3000/rad/tematskiPrihvatljiv/"+PID,
         type: "GET", 
         crossDomain: true,
         withCredentials: true,
@@ -222,7 +222,7 @@ function logout(){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/logout",
+		url: "http://localhost:3000/korisnik/logout",
         type: "GET",
         dataType: "json",
         success: function (data) {

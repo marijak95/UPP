@@ -48,22 +48,25 @@ public class EmailAutoruIUredniku implements JavaDelegate {
 		if(glavniUrednik!=null && autorRada!= null){
 			emailService.getMail().setTo(glavniUrednik.getEmail());
 			
-			emailService.getMail().setSubject("Prijava novog rada u casopis");
-			emailService.getMail().setText("Postovani, \n\n Novi rad je prijavljen u okviru"
-					+ "Vaseg casopisa. \n Naslov rada: "+ rad.getNaslov() + ".\n Autor rada"
-							+ " je: " + autorRada.getIme() + " " + autorRada.getPrezime() 
-				+".\n\n NC Admin");
+			emailService.getMail().setSubject("Novi Rad");
+			emailService.getMail().setText("Postovani, "
+					+ "\nPodnet je zahtev za prijavu rada u vasem casopisu."
+					+ "\nOsnovni podaci rada: \nNaslov rada: "+ rad.getNaslov() + "\nAutor rada:"
+						 + autorRada.getIme() + " " + autorRada.getPrezime() 
+						 + "\n\nS postovanjem, \nNaucna Centrala");
+			
 			emailService.sendNotificaitionSync(glavniUrednik);
 			
 			emailService.getMail().setTo(autorRada.getEmail());
 			
-			emailService.getMail().setSubject("Prijava novog rada u casopis");
-			emailService.getMail().setText("Postovani, \n\n Vas rad je prijavljen u okviru"
-					+ " casopisa: \"" + casopisRada.getNaziv() + "\", ciji je glavni urednik "
-							+ glavniUrednik.getIme() + " " + glavniUrednik.getPrezime() + ".\n"
-									+ " \n Naslov rada: "+ rad.getNaslov() + ".\n Autor rada"
-							+ " je: " + autorRada.getIme() + " " + autorRada.getPrezime() 
-				+".\n\n NC Admin");
+			emailService.getMail().setSubject("Novi rad");
+			emailService.getMail().setText("Postovani, "
+					+"\nOvim putem potvrdjujemo da je Vas rad prijavljen u casopis: "
+					 + casopisRada.getNaziv() 
+									+ "\nOsnovni podaci rada: \nNaslov rada: "+ rad.getNaslov() + 
+									"\nAutor rada:"
+									+ autorRada.getIme() + " " + autorRada.getPrezime() 
+									+ "\n\nS postovanjem, \nNaucna Centrala");
 			emailService.sendNotificaitionSync(autorRada);
 			
 		}

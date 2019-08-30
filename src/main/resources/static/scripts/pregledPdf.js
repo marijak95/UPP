@@ -17,7 +17,7 @@ $(document).ready(function () {
 function prihvatiRad(idRada,PID){
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/rad/prihvatiRad/"+PID+"/radId/"+idRada,
+		url: "http://localhost:3000/rad/prihvatiRad/"+PID+"/radId/"+idRada,
         type: "GET", 
         crossDomain: true,
         withCredentials: true,
@@ -36,7 +36,7 @@ function prihvatiRad(idRada,PID){
 function korekcijaFormata(idRada,PID){
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/rad/korekcijaFormata/"+PID+"/radId/"+idRada,
+		url: "http://localhost:3000/rad/korekcijaFormata/"+PID+"/radId/"+idRada,
         type: "GET", 
         crossDomain: true,
         withCredentials: true,

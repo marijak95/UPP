@@ -20,7 +20,7 @@ function buttonLoginClick(){
 	if(res !=null){
 			$.ajax({
 				async: false,
-				url: "http://localhost:4242/user/loginUser",
+				url: "http://localhost:3000/user/loginUser",
 		        type: "POST",
 		        contentType:"application/json",
 		        data : data,

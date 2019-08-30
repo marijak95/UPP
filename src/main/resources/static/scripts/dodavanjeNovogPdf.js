@@ -6,7 +6,7 @@ $(document).ready(function () {
 	var naucneOblasti;
 	$.ajax({
 			async: false,
-			url: "http://localhost:4242/user/getFormFields/"+pid,
+			url: "http://localhost:3000/user/getFormFields/"+pid,
 	        type: "GET",
 	        dataType: "json",
 	        success: function (data) {
@@ -53,7 +53,7 @@ function submitIspravkaRada(){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/rad/dodajIspravku/"+PInsId+"/idRada/"+idRada,
+		url: "http://localhost:3000/rad/dodajIspravku/"+PInsId+"/idRada/"+idRada,
         type: "POST",
         contentType: "application/json",
         data: data,

@@ -35,14 +35,13 @@ public class EmailUslovnoPrihvatanje implements JavaDelegate {
 	
 		emailService.getMail().setTo(autorRada.getEmail());
 		
-		emailService.getMail().setSubject("Rad prihvacen");
-		emailService.getMail().setText("Postovani, Vas rad je uslovno prihvacen"
-				+ ". Potrebno je da ga ispravite u zadatom roku. Rad je za casopis: "
-				+ casopis.getNaziv()
-				+ ".\n \n"
-								+ " \n Naslov rada: "+ rad.getNaslov() + ".\n Autor rada"
-						+ " je: " + autorRada.getIme() + " " + autorRada.getPrezime() 
-			+".\n\n NC Admin");
+		emailService.getMail().setSubject("Uslovno prihvacen rad");
+		emailService.getMail().setText("Postovani, "
+				+ "\nOvom prilikom Vas obavestavamo da je Vas rad uslovno prihvacen."
+				+ "\n U roku od dve nedelje biste terbali da ga ispravite."
+				+ " \nOsnovni podaci rada: \nNaslov rada: "+ rad.getNaslov() + "\nAutor rada"
+				+ autorRada.getIme() + " " + autorRada.getPrezime() 
+				+ "\n\nS postovanjem, \nNaucna Centrala");
 		emailService.sendNotificaitionSync(autorRada);
 		
 	}

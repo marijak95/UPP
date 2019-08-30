@@ -2,7 +2,7 @@ $(document).ready(function () {
 	var process = "Registracija";
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/user/startProcess/"+process,
+		url: "http://localhost:3000/user/startProcess/"+process,
         type: "GET",
         dataType:"json",
         crossDomain: true,
@@ -81,7 +81,7 @@ function buttonRegisterClick(){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/user/registerUser/"+taskId,
+		url: "http://localhost:3000/user/registerUser/"+taskId,
         type: "POST",
         contentType:"application/json",
         data : data,

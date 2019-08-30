@@ -40,13 +40,12 @@ public class EmailPrihvatanje implements JavaDelegate {
 	
 		emailService.getMail().setTo(autorRada.getEmail());
 		
-		emailService.getMail().setSubject("Rad prihvacen");
-		emailService.getMail().setText("Postovani, Vas rad je prihvacen. Bice objavljen u casopisu: "
-				+ casopis.getNaziv()
-				+ ".\n \n"
-								+ " \n Naslov rada: "+ rad.getNaslov() + ".\n Autor rada"
-						+ " je: " + autorRada.getIme() + " " + autorRada.getPrezime() 
-			+".\n\n NC Admin");
+		emailService.getMail().setSubject("Prihvacen rad");
+		emailService.getMail().setText("Postovani"
+				+ "\nOvom prilikom Vas obavestavamo da je Vas rad prihvacen."
+				+ " \nOsnovni podaci rada: \nNaslov rada: "+ rad.getNaslov() + "\nAutor rada"
+				+ autorRada.getIme() + " " + autorRada.getPrezime() 
+				+ "\n\nS postovanjem, \nNaucna Centrala");
 		emailService.sendNotificaitionSync(autorRada);
 		
 	}

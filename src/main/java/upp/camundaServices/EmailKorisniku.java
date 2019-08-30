@@ -51,13 +51,13 @@ public class EmailKorisniku implements JavaDelegate {
 		execution.setVariable("glavniUrednik",glavniUrednik);
 		emailService.getMail().setTo(autorRada.getEmail());
 		
-		emailService.getMail().setSubject("Korekcija pdf");
-		emailService.getMail().setText("Postovani, \n\n Vas rad je vracen na korekciju formata."
-				+ "\n Casopisa: \"" + casopisRada.getNaziv() + "\", ciji je glavni urednik "
-						+ glavniUrednik.getIme() + " " + glavniUrednik.getPrezime() + ".\n"
-								+ " \n Naslov rada: "+ rad.getNaslov() + ".\n Autor rada"
-						+ " je: " + autorRada.getIme() + " " + autorRada.getPrezime() 
-			+".\n\n NC Admin");
+		emailService.getMail().setSubject("Potrebna korekcija");
+		emailService.getMail().setText("Postovani, "
+				+ "\nOvim putem Vas obavestavamo da je potrebno u roku od 10 dana"
+				+ "da izvrsite korekciju formata."
+					+ " \nOsnovni podaci rada: \nNaslov rada: "+ rad.getNaslov() + "\nAutor rada"
+						+ autorRada.getIme() + " " + autorRada.getPrezime() 
+						+ "\n\nS postovanjem, \nNaucna Centrala");
 		emailService.sendNotificaitionSync(autorRada);
 		
 	}

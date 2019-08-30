@@ -197,7 +197,6 @@
           <camunda:formField id="grad" label="Grad" type="string" />
           <camunda:formField id="drzava" label="Drzava" type="string" />
           <camunda:formField id="email" label="Email" type="string" />
-          <camunda:formField id="josKoautora" label="Jos" type="boolean" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_1rbnjd8</bpmn:incoming>

@@ -48,14 +48,12 @@ public class EmailNoviRecenzenti implements JavaDelegate{
 		}
 		emailService.getMail().setTo(glavniUrednik.getEmail());
 		
-		emailService.getMail().setSubject("Kasnjenje pri recenziranju");
-		emailService.getMail().setText("Postovani, \n\n Odabrani recenzenti nisu dali recenzije u roku."
-				+ " Potrebno je odabrati nove recenzente."
-				+ "\n Casopis: \"" + casopisRada.getNaziv() + "\", ciji je glavni urednik "
-						+ glavniUrednik.getIme() + " " + glavniUrednik.getPrezime() + ".\n"
-								+ " \n Naslov rada: "+ rad.getNaslov() + ".\n Autor rada"
-						+ " je: " + autorRada.getIme() + " " + autorRada.getPrezime() 
-			+".\n\n NC Admin");
+		emailService.getMail().setSubject("Novi recenzenti");
+		emailService.getMail().setText("Postovani, "
+				+ "\nBuduci da su odabrani recenzenti prekoracili dozvoljen vremenski period, trebate odabrati nove"
+				+ " \nOsnovni podaci rada: \nNaslov rada: "+ rad.getNaslov() + "\nAutor rada"
+				+ autorRada.getIme() + " " + autorRada.getPrezime() 
+				+ "\n\nS postovanjem, \nNaucna Centrala");
 		emailService.sendNotificaitionSync(glavniUrednik);
 	}
 	

@@ -2,7 +2,7 @@ $(document).ready(function () {
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/getLoggedIn",
+		url: "http://localhost:3000/korisnik/getLoggedIn",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -17,7 +17,7 @@ $(document).ready(function () {
     });
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/getTaskovi",
+		url: "http://localhost:3000/korisnik/getTaskovi",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -36,7 +36,7 @@ $(document).ready(function () {
 function task(taskId,taskName){
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/getFormFields/"+taskId,
+		url: "http://localhost:3000/korisnik/getFormFields/"+taskId,
         type: "GET",
         dataType:"json",
         crossDomain: true,
@@ -80,7 +80,7 @@ function dodajRecenziju(taskId){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/submitRecenziranje/"+taskId,
+		url: "http://localhost:3000/korisnik/submitRecenziranje/"+taskId,
         type: "POST",
         contentType:"application/json",
         data:recenzijaDTO,
@@ -98,7 +98,7 @@ function logout(){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/logout",
+		url: "http://localhost:3000/korisnik/logout",
         type: "GET",
         dataType: "json",
         success: function (data) {

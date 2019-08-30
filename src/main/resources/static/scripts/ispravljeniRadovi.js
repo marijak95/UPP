@@ -2,7 +2,7 @@ $(document).ready(function () {
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/rad/getAllIspravljeniRadovi",
+		url: "http://localhost:3000/rad/getAllIspravljeniRadovi",
         type: "GET",
         dataType: "json",
         success: function (data) {

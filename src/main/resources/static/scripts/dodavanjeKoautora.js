@@ -4,7 +4,7 @@ $(document).ready(function () {
 	var PInsId = url.searchParams.get("PID");
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/user/getFormFields/"+PInsId,
+		url: "http://localhost:3000/user/getFormFields/"+PInsId,
         type: "GET",
         dataType:"json",
         crossDomain: true,
@@ -84,7 +84,7 @@ function dodajKoautora(){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/rad/dodajKoautora/"+PInsId,
+		url: "http://localhost:3000/rad/dodajKoautora/"+PInsId,
         type: "POST",
         contentType:"application/json",
         data : data,

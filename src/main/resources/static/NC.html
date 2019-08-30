@@ -61,6 +61,7 @@ tr:hover {background-color:#f5f5f5;}
   display: inline-block;
   font-size: 25px;
 }
+.frm *{display:inline}
 </style>
 	<head>
 		<meta charset="UTF-8">
@@ -69,7 +70,6 @@ tr:hover {background-color:#f5f5f5;}
 	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
-		<script src="scripts/NC.js"></script>		
 		<script src="scripts/homePage.js"></script>
 		<link rel="shortcut icon" href="assets/ico/book.png">
 		
@@ -80,8 +80,11 @@ tr:hover {background-color:#f5f5f5;}
 	<body>
 	<div class="bg">
 	<br/>
+	<div id="frm">
 		<button style="margin-left:85%" class="button-home" id="logoutButton" onclick="logout()">Odjavi se</button>
-		<button class="button-home" id="ispravljeniRadoviButton" onclick="ispravljeniRadovi()">Radovi za ispravku</button>
+		<button style="margin-left:10%" class="button-home" id="ispravljeniRadoviButton" onclick="ispravljeniRadovi()">Ispravka</button>
+	</div>
+		
 		 <div class="row" id="divTaskovi">
 	    	
 	     </div>

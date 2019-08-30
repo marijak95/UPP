@@ -6,7 +6,7 @@ $(document).ready(function () {
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/getRecenzenti/"+taskId,
+		url: "http://localhost:3000/korisnik/getRecenzenti/"+taskId,
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -48,7 +48,7 @@ function odaberiRecenzente(){
 	
 	$.ajax({
 		async: false,
-		url: "http://localhost:4242/korisnik/submitRecenzenti/"+taskId,
+		url: "http://localhost:3000/korisnik/submitRecenzenti/"+taskId,
         type: "POST",
         contentType: "application/json",
         data:recenziranjeDTO,
